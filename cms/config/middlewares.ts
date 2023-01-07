@@ -1,6 +1,16 @@
-export default [
+export default ({env}) => ([
   'strapi::errors',
-  'strapi::security',
+  {
+    name: "strapi::security",
+    config: {
+      contentSecurityPolicy: {
+        directives: {
+          "default-src": ["'self'"],
+          "img-src": ["'self'", "data:", "blob:", 'dl.airtable.com', env("SUPABASE_API_URL")],
+        },
+      },
+    },
+  },
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::logger',
@@ -9,4 +19,4 @@ export default [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
-];
+]);

@@ -12,7 +12,7 @@
 			<a href="article/{article.id}">
 				<img
 					style="height: 4rem;"
-					src={getUrl(article.attributes.image.data.attributes.url, true)}
+					src={article.attributes.image.data.attributes.url}
 					alt=""
 				/>
 				{article.attributes.title}</a
