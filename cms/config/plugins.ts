@@ -1,4 +1,11 @@
 export default ({ env }) => ({
+  'users-permissions': {
+    config: {
+      jwt: {
+        jwtSecret: env("STRAPI_JWT_SECRET")
+      },
+    },
+  },
   plugins: { ckeditor: { enabled: true } },
   upload: {
     config: {
