@@ -6,6 +6,7 @@
   "scripts": {
     "develop": "ENV_PATH=../.env strapi develop",
     "start": "ENV_PATH=../.env strapi start",
+    "start:rootdotenv": "strapi start",
     "build": "ENV_PATH=../.env strapi build",
     "strapi": "ENV_PATH=../.env strapi"
   },
