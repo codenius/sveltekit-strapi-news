@@ -1,6 +1,7 @@
 import getUrl from '$lib/getUrl';
+import { handleLoad } from '$lib/handleLoad';
+import type { PageLoad } from './$types';
 
-export async function load() {
-	const json = await (await fetch(getUrl('/articles?populate=*'))).json();
-	return json;
-}
+export const load = (async ({ fetch }) => {
+	return handleLoad(getUrl('/articles?populate=*'), fetch);
+}) satisfies PageLoad;
