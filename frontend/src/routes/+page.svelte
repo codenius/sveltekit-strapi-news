@@ -4,9 +4,7 @@
 	export let data: PageData;
 </script>
 
-<h1>Home</h1>
-
-<ul class="flex">
+<ul class="flex flex-wrap max-w-screen-xl m-auto gap-4">
 	{#each data.data as article}
 		<li>
 			<Card img={article.attributes.image.data.attributes.url} href="article/{article.id}">
