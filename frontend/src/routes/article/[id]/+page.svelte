@@ -4,10 +4,11 @@
 	export let data: PageData;
 </script>
 
-<h1>{data.data.attributes.title}</h1>
+<h1 class="pb-10 font-semibold tracking-wide">{data.data.attributes.title}</h1>
 <img
+	class="m-5"
 	style="max-height: 50vh; max-width: 100%"
 	src={data.data.attributes.image.data.attributes.url}
 	alt=""
 />
-{@html data.data.attributes.content}
+<article class="text-base max-w-5xl">{@html data.data.attributes.content}</article>
