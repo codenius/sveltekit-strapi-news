@@ -1,28 +1,56 @@
-<script>
+<script lang="ts">
 	import '../app.postcss';
-	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
+	import {
+		Navbar,
+		NavBrand,
+		NavLi,
+		NavUl,
+		NavHamburger,
+		Footer,
+		FooterCopyright,
+		FooterLink,
+		FooterLinkGroup,
+		DarkMode
+	} from 'flowbite-svelte';
 	import { Home } from 'svelte-heros-v2';
 </script>
 
-<header>
-	<Navbar let:hidden let:toggle>
-		<NavBrand href="/">
-			<Home class="mr-3 h-6 sm:h-9" size="3rem" />
-			<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-				Flowbite
-			</span>
-		</NavBrand>
-		<NavHamburger on:click={toggle} />
-		<NavUl {hidden}>
-			<NavLi href="/" active={true}>Home</NavLi>
-			<NavLi href="/about">About</NavLi>
-			<NavLi href="/services">Services</NavLi>
-			<NavLi href="/pricing">Pricing</NavLi>
-			<NavLi href="/contact">Contact</NavLi>
-		</NavUl>
-	</Navbar>
-</header>
+<div class="flex flex-col h-screen">
+	<header class="sticky top-0 shadow-md">
+		<Navbar let:hidden let:toggle>
+			<NavBrand href="/" class="gap-1">
+				<Home class="h-6 sm:h-9" />
+				<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+					Flowbite
+				</span>
+			</NavBrand>
+			<NavHamburger on:click={toggle} />
+			<NavUl {hidden}>
+				<NavLi href="/" active={true}>Home</NavLi>
+				<NavLi href="/about">About</NavLi>
+				<NavLi href="/services">Services</NavLi>
+				<NavLi href="/pricing">Pricing</NavLi>
+				<NavLi href="/contact">Contact</NavLi>
+			</NavUl>
+		</Navbar>
+	</header>
 
-<main>
-	<slot />
-</main>
+	<main class="px-10 py-5 max-w-screen-xl m-auto flex-grow">
+		<slot />
+	</main>
+
+	<Footer class="border-t-2 dark:border-gray-700 rounded-b-none">
+		<FooterCopyright href="/" by="Flowbite™" year={2022} />
+		<FooterLinkGroup
+			ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"
+		>
+			<FooterLink href="/">About</FooterLink>
+			<FooterLink href="/">Privacy Policy</FooterLink>
+			<FooterLink href="/">Licensing</FooterLink>
+			<FooterLink href="/">Contact</FooterLink>
+		</FooterLinkGroup>
+	</Footer>
+</div>
+<DarkMode
+	class="fixed bottom-0 left-0 m-3 shadow-xl bg-gray-100 dark:shadow-gray-900 dark:bg-gray-900"
+/>
