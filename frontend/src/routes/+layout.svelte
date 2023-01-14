@@ -24,7 +24,10 @@
 					Flowbite
 				</span>
 			</NavBrand>
-			<NavHamburger on:click={toggle} />
+			<div class="flex md:order-2">
+				<DarkMode class="bg-gray-100 dark:bg-gray-800 shadow-xl dark:shadow-gray-800" />
+				<NavHamburger on:click={toggle} />
+			</div>
 			<NavUl {hidden}>
 				<NavLi href="/" active={true}>Home</NavLi>
 				<NavLi href="/about">About</NavLi>
@@ -51,6 +54,3 @@
 		</FooterLinkGroup>
 	</Footer>
 </div>
-<DarkMode
-	class="fixed bottom-0 left-0 m-3 shadow-xl bg-gray-100 dark:shadow-gray-900 dark:bg-gray-900"
-/>
