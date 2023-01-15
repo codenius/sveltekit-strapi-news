@@ -54,3 +54,9 @@
 		</FooterLinkGroup>
 	</Footer>
 </div>
+
+<style global lang="postcss">
+	body {
+		@apply bg-white text-black dark:bg-gray-800 dark:text-white;
+	}
+</style>

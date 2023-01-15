@@ -11,4 +11,36 @@
 	src={data.data.attributes.image.data.attributes.url}
 	alt=""
 />
-<article class="text-base max-w-5xl">{@html data.data.attributes.content}</article>
+<article class="ARTICLE max-w-5xl">{@html data.data.attributes.content}</article>
+
+<style global lang="postcss">
+	.ARTICLE {
+		h1 {
+			@apply text-6xl;
+		}
+
+		h2 {
+			@apply text-5xl pb-3;
+		}
+
+		h3 {
+			@apply text-4xl;
+		}
+
+		h4 {
+			@apply text-3xl;
+		}
+
+		h5 {
+			@apply text-2xl;
+		}
+
+		h6 {
+			@apply text-xl;
+		}
+
+		p {
+			@apply text-lg pb-4;
+		}
+	}
+</style>
