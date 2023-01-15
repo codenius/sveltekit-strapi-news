@@ -4,9 +4,9 @@
 	export let data: PageData;
 </script>
 
-<h1 class="pb-10 font-semibold tracking-wide">{data.data.attributes.title}</h1>
+<h1 class="pb-5 text-6xl font-semibold tracking-wide">{data.data.attributes.title}</h1>
 <img
-	class="m-5"
+	class="pb-5"
 	style="max-height: 50vh; max-width: 100%"
 	src={data.data.attributes.image.data.attributes.url}
 	alt=""
