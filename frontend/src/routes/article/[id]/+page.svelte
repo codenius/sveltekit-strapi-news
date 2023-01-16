@@ -4,43 +4,12 @@
 	export let data: PageData;
 </script>
 
-<h1 class="pb-5 text-6xl font-semibold tracking-wide">{data.data.attributes.title}</h1>
-<img
-	class="pb-5"
-	style="max-height: 50vh; max-width: 100%"
-	src={data.data.attributes.image.data.attributes.url}
-	alt=""
-/>
-<article class="ARTICLE max-w-5xl">{@html data.data.attributes.content}</article>
-
-<style global lang="postcss">
-	.ARTICLE {
-		h1 {
-			@apply text-6xl;
-		}
-
-		h2 {
-			@apply text-5xl pb-3;
-		}
-
-		h3 {
-			@apply text-4xl;
-		}
-
-		h4 {
-			@apply text-3xl;
-		}
-
-		h5 {
-			@apply text-2xl;
-		}
-
-		h6 {
-			@apply text-xl;
-		}
-
-		p {
-			@apply text-lg pb-4;
-		}
-	}
-</style>
+<div class="flex flex-col items-center">
+	<h1 class="text-4xl md:text-6xl pb-5 text-center font-black font-serif tracking-wide">{data.data.attributes.title}</h1>
+	<img
+		class="pb-5 max-h-[50vh] max-w-full object-scale-down"
+		src={data.data.attributes.image.data.attributes.url}
+		alt=""
+	/>
+	<article class="prose dark:prose-invert">{@html data.data.attributes.content}</article>
+</div>

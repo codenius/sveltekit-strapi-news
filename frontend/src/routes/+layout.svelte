@@ -38,7 +38,7 @@
 		</Navbar>
 	</header>
 
-	<main class="px-3 sm:px-10 py-2 max-w-screen-xl m-auto flex-grow">
+	<main class="p-3 sm:px-10 max-w-screen-xl m-auto flex-grow">
 		<slot />
 	</main>
 
