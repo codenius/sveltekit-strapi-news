@@ -16,7 +16,7 @@
 </script>
 
 <div class="flex flex-col h-screen">
-	<header class="sticky top-0 shadow-md">
+	<header class="sticky top-0 z-50 shadow-md">
 		<Navbar let:hidden let:toggle>
 			<NavBrand href="/" class="gap-1">
 				<Home class="h-6 sm:h-9" />
@@ -57,6 +57,6 @@
 
 <style global lang="postcss">
 	body {
-		@apply bg-white text-black dark:bg-gray-800 dark:text-white;
+		@apply bg-white text-black dark:bg-gray-800 dark:text-white transition-colors ease-out;
 	}
 </style>
