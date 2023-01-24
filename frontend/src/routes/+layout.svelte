@@ -3,7 +3,6 @@
 	import {
 		Navbar,
 		NavBrand,
-		NavLi,
 		NavUl,
 		NavHamburger,
 		Footer,
@@ -12,6 +11,7 @@
 		FooterLinkGroup,
 		DarkMode
 	} from 'flowbite-svelte';
+	import NavLink from './NavLink.svelte';
 	import { Home } from 'svelte-heros-v2';
 </script>
 
@@ -29,11 +29,10 @@
 				<NavHamburger on:click={toggle} />
 			</div>
 			<NavUl {hidden}>
-				<NavLi href="/" active={true}>Home</NavLi>
-				<NavLi href="/about">About</NavLi>
-				<NavLi href="/services">Services</NavLi>
-				<NavLi href="/pricing">Pricing</NavLi>
-				<NavLi href="/contact">Contact</NavLi>
+				<NavLink href="/">Home</NavLink>
+				<NavLink href="/categories">Categories</NavLink>
+				<NavLink href="/archive">Archive</NavLink>
+				<NavLink href="/about">About</NavLink>
 			</NavUl>
 		</Navbar>
 	</header>
