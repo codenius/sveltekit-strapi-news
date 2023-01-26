@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.postcss';
+	import '$lib/ck-content-styles.css';
 	import {
 		Navbar,
 		NavBrand,
