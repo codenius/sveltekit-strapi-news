@@ -26,7 +26,9 @@
 				</span>
 			</NavBrand>
 			<div class="flex md:order-2">
-				<DarkMode class="bg-gray-100 dark:bg-gray-800 shadow-xl dark:shadow-gray-800" />
+				<DarkMode
+					class="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 shadow-xl dark:shadow-gray-800"
+				/>
 				<NavHamburger on:click={toggle} />
 			</div>
 			<NavUl {hidden}>
