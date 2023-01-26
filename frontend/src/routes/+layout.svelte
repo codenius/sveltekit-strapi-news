@@ -16,6 +16,10 @@
 	import { Home } from 'svelte-heros-v2';
 </script>
 
+<svelte:head>
+	<title>Hacker's Corner</title>
+</svelte:head>
+
 <div class="flex flex-col h-screen">
 	<header class="sticky top-0 z-50 shadow-md">
 		<Navbar let:hidden let:toggle>

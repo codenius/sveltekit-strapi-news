@@ -5,6 +5,10 @@
 	export let data: PageData;
 </script>
 
+<svelte:head>
+	<title>Home – Hacker's Corner</title>
+</svelte:head>
+
 <div class="flex flex-col items-center">
 	<h2 class="text-4xl font-bold m-10">Latest news</h2>
 	<Timeline>

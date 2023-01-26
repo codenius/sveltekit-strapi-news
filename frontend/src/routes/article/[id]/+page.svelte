@@ -4,6 +4,10 @@
 	export let data: PageData;
 </script>
 
+<svelte:head>
+	<title>{data.data.attributes.title} – Hacker's Corner</title>
+</svelte:head>
+
 <div class="flex flex-col items-center">
 	<h1 class="text-4xl md:text-6xl pb-5 text-center font-black font-serif tracking-wide">
 		{data.data.attributes.title}
