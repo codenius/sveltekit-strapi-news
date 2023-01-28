@@ -19,12 +19,13 @@
 				)}
 			>
 				<a
-					href="article/{article.id}"
+					href="/article/{article.id}"
 					class="overflow-hidden p-3 block duration-200 shadow hover:shadow-xl rounded-lg dark:shadow-gray-900 hover:scale-[1.01] ease-[ease] transition-all"
 				>
-					<h3 class="text-xl font-bold capitalize">{article.attributes.title}</h3>
+					<h3 class="text-xl font-bold">{article.attributes.title}</h3>
 					<div class="flex flex-wrap">
 						<img
+							class:hidden={!article.attributes.image.data?.attributes.url}
 							class="max-w-full max-h-36 object-scale-down m-3 rounded"
 							alt=""
 							src={article.attributes.image.data?.attributes.url}
