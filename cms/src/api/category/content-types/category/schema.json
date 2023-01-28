@@ -23,6 +23,12 @@
       "targetField": "name",
       "required": true
     },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "category"
+    },
     "color": {
       "type": "string",
       "default": "white"
