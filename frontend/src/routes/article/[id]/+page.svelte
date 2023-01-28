@@ -17,7 +17,7 @@
 				<address class="italic inline">
 					{data.data.attributes.author.data?.attributes.name || 'Anonym'}
 				</address>
-				<span>at </span><time class="italic"
+				<span>on </span><time class="italic"
 					>{new Intl.DateTimeFormat('en-GB', { dateStyle: 'medium', timeStyle: 'short' }).format(
 						new Date(data.data.attributes.createdAt)
 					)}</time
@@ -26,7 +26,7 @@
 			<span class:hidden={!data.data.attributes.category.data?.attributes.slug}>|</span>
 			<span class:hidden={!data.data.attributes.category.data?.attributes.slug}
 				>Posted in <a
-					class="underline text-blue-500"
+					class="underline text-blue-500 hover:text-blue-700"
 					href="/categories/{data.data.attributes.category.data?.attributes.slug}"
 					><span style="color: {data.data.attributes.category.data?.attributes.color};"
 						>&#9679;</span
