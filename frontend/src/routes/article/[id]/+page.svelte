@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import { Hr } from 'flowbite-svelte';
 
 	export let data: PageData;
 </script>
@@ -50,4 +51,23 @@
 	<article class="prose dark:prose-invert max-w-2xl ck-content">
 		{@html data.data.attributes.content}
 	</article>
+
+	<Hr class="m-5" />
+
+	<div class="w-full max-w-2xl">
+		<h2 class="text-2xl font-extralight">Sources:</h2>
+		<div class="inline break-all sm:break-normal sm:break-words">
+			{#each data.data.attributes.sources || [] as source, index}
+				{index != 0 ? ', ' : ''}
+				<a
+					class="underline hover:decoration-2 hover:[filter:drop-shadow(0_0_.7rem_currentColor)] transition-[filter] duration-200 text-blue-500 hover:text-blue-700"
+					href={source}
+					target="_blank"
+					rel="noopener noreferrer">{source}</a
+				>
+			{:else}
+				<span class="text-gray-600">No sources provided.</span>
+			{/each}
+		</div>
+	</div>
 </div>
