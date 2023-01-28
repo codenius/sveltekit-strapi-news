@@ -4,6 +4,7 @@
 	export let data: PageData;
 </script>
 
+<h1 class="text-4xl font-bold m-10">Archive</h1>
 <ul class="flex flex-wrap gap-4">
 	{#each data.data as article}
 		<li>
