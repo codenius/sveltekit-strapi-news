@@ -10,22 +10,25 @@
 
 <div class="flex flex-col items-center">
 	<div class="max-w-2xl ">
-		<div class="flex gap-x-2 self-start text-base text-gray-700 mb-2 flex-wrap">
+		<div class="flex gap-x-2 self-start text-base text-gray-700 dark:text-gray-300 mb-2 flex-wrap">
 			<span
-				>By <address class="italic inline">
-					{data.data.attributes.author.data?.attributes.name}
+				><span>By </span>
+				<address class="italic inline">
+					{data.data.attributes.author.data?.attributes.name || 'Anonym'}
 				</address>
-				at<time class="italic"
+				<span>at </span><time class="italic"
 					>{new Intl.DateTimeFormat('en-GB', { dateStyle: 'medium', timeStyle: 'short' }).format(
 						new Date(data.data.attributes.createdAt)
 					)}</time
 				></span
 			>
-			<span>|</span>
-			<span
+			<span class:hidden={!data.data.attributes.category.data?.attributes.slug}>|</span>
+			<span class:hidden={!data.data.attributes.category.data?.attributes.slug}
 				>Posted in <a
 					class="underline text-blue-500"
-					href="/catgories/{data.data.attributes.category.data?.attributes.slug}"
+					href="/categories/{data.data.attributes.category.data?.attributes.slug}"
+					><span style="color: {data.data.attributes.category.data?.attributes.color};"
+						>&#9679;</span
 					>{data.data.attributes.category.data?.attributes.name}</a
 				></span
 			>
