@@ -23,6 +23,9 @@ export default ({ env }) => ({
       ssl: {
         rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false), // For self-signed certificates
       },
+      pool: {
+        min: 0
+      },
     },
     debug: false,
   },
