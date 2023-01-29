@@ -39,6 +39,7 @@
 				<NavLink href="/">Home</NavLink>
 				<NavLink href="/categories">Categories</NavLink>
 				<NavLink href="/archive">Archive</NavLink>
+				<NavLink href="/donate">Donate</NavLink>
 				<NavLink href="/about">About</NavLink>
 			</NavUl>
 		</Navbar>
