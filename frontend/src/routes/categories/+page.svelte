@@ -5,7 +5,7 @@
 	export let data: PageData;
 </script>
 
-<h1 class="text-4xl font-bold mb-5">Categories</h1>
+<h1 class="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white mb-5">Categories</h1>
 <div class="mb-5">All about your favorite topic in one place.</div>
 
 <ul class="flex flex-wrap gap-4">

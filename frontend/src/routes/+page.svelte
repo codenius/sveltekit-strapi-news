@@ -10,7 +10,7 @@
 </svelte:head>
 
 <div class="flex flex-col items-center">
-	<h2 class="text-4xl font-bold m-10">Latest news</h2>
+	<h2 class="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white m-10">Latest news</h2>
 	<Timeline>
 		{#each data.data as article}
 			<TimelineItem
