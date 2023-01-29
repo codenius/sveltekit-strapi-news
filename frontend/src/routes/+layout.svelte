@@ -24,7 +24,7 @@
 	<header class="sticky top-0 z-50 shadow-md">
 		<Navbar let:hidden let:toggle>
 			<NavBrand href="/" class="gap-1">
-				<Home class="h-6 sm:h-9" />
+				<img src="/favicon.svg" class="h-5 sm:h-7" />
 				<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
 					Hacker's Corner
 				</span>
