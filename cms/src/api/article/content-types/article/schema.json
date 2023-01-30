@@ -48,6 +48,10 @@
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "priority": {
+      "type": "decimal",
+      "default": 1
     }
   }
 }
