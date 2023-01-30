@@ -66,7 +66,7 @@
 					rel="noopener noreferrer">{source}</a
 				>
 			{:else}
-				<span class="text-gray-600">No sources provided.</span>
+				<span class="text-gray-600 dark:text-gray-400">No sources provided.</span>
 			{/each}
 		</div>
 	</div>

@@ -36,7 +36,7 @@
 							>
 								{article.attributes.summary || ''}
 							</p>
-							<Button class="flex gap-1" href="article/{article.id}" color="alternative"
+							<Button class="flex gap-1 dark:border-gray-500" href="article/{article.id}" color="alternative"
 								>Continue reading<ArrowRight size="20" /></Button
 							>
 						</div>
