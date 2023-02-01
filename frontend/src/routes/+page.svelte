@@ -17,7 +17,7 @@
 					(new Date(0, 0, 1, 12).getTime() - Date.now()) * (a.attributes.priority || 0))
 			);
 		})
-		.slice(0, 10)
+		.slice(0, 5)
 		.map((article: any, i: any) => {
 			return {
 				id: i,
