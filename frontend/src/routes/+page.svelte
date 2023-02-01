@@ -1,11 +1,60 @@
-<script lang="ts">
+<script lang="ts">	
 	import type { PageData } from './$types';
 	import { Timeline, TimelineItem, Button } from 'flowbite-svelte';
-	import { ArrowRight } from 'svelte-heros-v2';
-	export let data: PageData;
+	import Carousel from "svelte-carousel";
+	import { ArrowRight, ArrowLeft } from 'svelte-heros-v2';	
+	import { browser } from '$app/environment';
+
+	export let data: PageData & {data: Array<any>};
+
+	export const slides = data.data
+		.filter((a:any) => a.attributes.image.data?.attributes.url)
+		.sort((a:any, b:any) => {
+			return  (new Date(b.attributes.createdAt).getTime()-(new Date(0, 0, 1, 12).getTime()-Date.now())*(b.attributes.priority||0)) - 
+					(new Date(a.attributes.createdAt).getTime()-(new Date(0, 0, 1, 12).getTime()-Date.now())*(a.attributes.priority||0))
+		})
+		.slice(0, 10)
+		.map((article:any, i: any) =>  {
+			return {
+				id: i,
+				img_url: article.attributes.image.data?.attributes.url,
+				name: article.attributes.title,
+				article_id: article.id,
+				summary: article.attributes.summary,
+				article:  new Date(article.attributes.createdAt).getTime()
+			}
+		})
 </script>
 
+
 <div class="flex flex-col items-center">
+	<div class="sm:w-[90vw] lg:w-[70vw] hidden md:block">
+		{#if browser}
+		<Carousel
+			autoplay
+			autoplayDuration={5000}
+			autoplayProgressVisible
+			pauseOnFocus
+			let:showPrevPage
+			let:showNextPage
+		>
+			<ArrowLeft slot="prev" on:click={showPrevPage} class="my-auto hover:text-gray-500"/>
+			{#each slides as slide}			
+				<a class="h-[50vh] relative" href="/article/{slide.article_id}">
+					<img class="object-scale-down h-[50vh] sm:w-[90vw] lg:w-[70vw]" src={slide.img_url} alt={slide.name}>
+					<div class="absolute top-0 bottom-0 left-0 sm:right-2/3 2xl:right-3/4 px-4 py-2 bg-gray-800 opacity-70">
+						<h2 class="text-xl text-white font-bold">{slide.name}</h2>
+						<p  class="mt-2 text-sm text-gray-300 mb-10">{slide.summary||""}</p>
+						<Button class="flex gap-1" href="article/{slide.article_id}" color="alternative">
+							Continue reading<ArrowRight size="20" />
+						</Button>
+					</div> 
+				</a>
+			{/each}	
+			<ArrowRight  slot="next" on:click={showNextPage} class="my-auto hover:text-gray-500"/>
+		</Carousel>
+		{/if}
+	</div>
 	<h2 class="text-4xl font-bold m-10">Latest news</h2>
 	<Timeline>
 		{#each data.data as article}
@@ -41,3 +90,4 @@
 		{/each}
 	</Timeline>
 </div>
+

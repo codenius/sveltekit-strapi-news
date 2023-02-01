@@ -41,6 +41,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@tailwindcss/nesting": "^0.0.0-insiders.565cd3e"
+		"@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+		"svelte-carousel": "^1.0.22"
 	}
 }
