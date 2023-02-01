@@ -1,7 +1,7 @@
 <script lang="ts">
 	import NewsCard from '$lib/NewsCard.svelte';
 	import type { PageData } from './$types';
-	export let data: PageData & {data: Array<any>};
+	export let data: PageData & { data: Array<any> };
 </script>
 
 <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white m-10">Archive</h1>

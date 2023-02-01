@@ -2,7 +2,7 @@
 	import type { PageData } from './$types';
 	import { Hr } from 'flowbite-svelte';
 
-	export let data: PageData & {data: any};
+	export let data: PageData & { data: any };
 </script>
 
 <svelte:head>
