@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { Timeline, TimelineItem, Button } from 'flowbite-svelte';
+	import { Timeline, TimelineItem, Button, ButtonGroup } from 'flowbite-svelte';
 	import Carousel from 'svelte-carousel';
 	import { ArrowRight, ArrowLeft } from 'svelte-heros-v2';
 	import { browser } from '$app/environment';
@@ -35,36 +35,49 @@
 </svelte:head>
 
 <div class="flex flex-col items-center">
-	<div class="sm:w-[90vw] lg:w-[70vw] hidden md:block">
+	<div class="h-64 sm:h-96 md:h-[35rem] md:max-h-[60vh] w-full my-5">
 		{#if browser}
 			<Carousel
 				autoplay
-				autoplayDuration={5000}
+				autoplayDuration={10000}
 				autoplayProgressVisible
 				pauseOnFocus
 				let:showPrevPage
 				let:showNextPage
 			>
-				<ArrowLeft slot="prev" on:click={showPrevPage} class="my-auto hover:text-gray-500" />
+				<ArrowLeft
+					slot="prev"
+					on:click={showPrevPage}
+					class="my-auto mr-1 sm:mx-3 sm:p-2 sm:border-2 box-content rounded-full block sm:hover:scale-125 sm:hover:-translate-x-3 transition-all hover:text-gray-500"
+				/>
 				{#each slides as slide}
-					<a class="h-[50vh] relative" href="/article/{slide.article_id}">
+					<a
+						class="relative flex justify-center items-center w-full"
+						href="/article/{slide.article_id}"
+					>
 						<img
-							class="object-scale-down h-[50vh] sm:w-[90vw] lg:w-[70vw]"
+							class="object-cover h-64 sm:h-96 md:h-[35rem] bg-white md:max-h-[60vh] sm:object-scale-down w-full sm:w-auto"
 							src={slide.img_url}
 							alt={slide.name}
 						/>
 						<div
-							class="absolute top-0 bottom-0 left-0 sm:right-2/3 2xl:right-3/4 px-4 py-2 bg-gray-800 opacity-70"
+							class="h-full absolute top-0 bottom-0 left-0 sm:right-2/3 2xl:right-3/4 px-4 py-2 bg-gray-800 bg-opacity-70"
 						>
 							<h2 class="text-xl text-white font-bold">{slide.name}</h2>
-							<p class="mt-2 text-sm text-gray-300 mb-10">{slide.summary || ''}</p>
-							<Button class="flex gap-1" href="article/{slide.article_id}" color="alternative">
-								Continue reading<ArrowRight size="20" />
-							</Button>
+							<p class="mt-2 text-sm text-gray-300 mb-7 line-clamp-5">{slide.summary || ''}</p>
+							<ButtonGroup
+								><Button class="flex gap-1" href="article/{slide.article_id}" color="alternative">
+									Continue reading<ArrowRight size="20" />
+								</Button></ButtonGroup
+							>
 						</div>
 					</a>
 				{/each}
-				<ArrowRight slot="next" on:click={showNextPage} class="my-auto hover:text-gray-500" />
+				<ArrowRight
+					slot="next"
+					on:click={showNextPage}
+					class="my-auto ml-1 sm:mx-3 sm:p-2 sm:border-2 box-content rounded-full block sm:hover:scale-125 sm:hover:translate-x-3 transition-all hover:text-gray-500"
+				/>
 			</Carousel>
 		{/if}
 	</div>
