@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { Card } from 'flowbite-svelte';
-	export let data: PageData;
+	export let data: PageData & {data: Array<any>};
 </script>
 
 <ul class="flex flex-wrap gap-4">
