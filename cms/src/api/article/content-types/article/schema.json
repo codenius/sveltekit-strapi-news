@@ -28,8 +28,9 @@
     },
     "category": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::category.category"
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "articles"
     },
     "sources": {
       "type": "json"
@@ -39,13 +40,18 @@
     },
     "author": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::author.author"
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "articles"
     },
     "slug": {
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "priority": {
+      "type": "decimal",
+      "default": 1
     }
   }
 }

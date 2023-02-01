@@ -26,6 +26,9 @@
 		})
 </script>
 
+<svelte:head>
+	<title>Home – Hacker's Corner</title>
+</svelte:head>
 
 <div class="flex flex-col items-center">
 	<div class="sm:w-[90vw] lg:w-[70vw] hidden md:block">
@@ -55,7 +58,7 @@
 		</Carousel>
 		{/if}
 	</div>
-	<h2 class="text-4xl font-bold m-10">Latest news</h2>
+	<h2 class="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white m-10">Latest news</h2>
 	<Timeline>
 		{#each data.data as article}
 			<TimelineItem
@@ -64,12 +67,13 @@
 				)}
 			>
 				<a
-					href="article/{article.id}"
+					href="/article/{article.id}"
 					class="overflow-hidden p-3 block duration-200 shadow hover:shadow-xl rounded-lg dark:shadow-gray-900 hover:scale-[1.01] ease-[ease] transition-all"
 				>
-					<h3 class="text-xl font-bold capitalize">{article.attributes.title}</h3>
+					<h3 class="text-xl font-bold">{article.attributes.title}</h3>
 					<div class="flex flex-wrap">
 						<img
+							class:hidden={!article.attributes.image.data?.attributes.url}
 							class="max-w-full max-h-36 object-scale-down m-3 rounded"
 							alt=""
 							src={article.attributes.image.data?.attributes.url}
@@ -80,7 +84,7 @@
 							>
 								{article.attributes.summary || ''}
 							</p>
-							<Button class="flex gap-1" href="article/{article.id}" color="alternative"
+							<Button class="flex gap-1 dark:border-gray-500" href="article/{article.id}" color="alternative"
 								>Continue reading<ArrowRight size="20" /></Button
 							>
 						</div>
