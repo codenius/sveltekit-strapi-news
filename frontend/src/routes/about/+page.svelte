@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+	import { Heading, Hr, Li, List, Listgroup, ListgroupItem } from 'flowbite-svelte';
 	import {
 		LightBulb,
 		Bolt,
@@ -43,6 +44,9 @@
 			icon: DocumentMagnifyingGlass
 		}
 	];
+
+	import type { PageData } from './$types';
+	export let data: PageData & { data: Array<any> };
 </script>
 
 <section class="bg-white dark:bg-gray-900 rounded-xl">
@@ -77,4 +81,22 @@
 			{/each}
 		</div>
 	</div>
+</section>
+<Hr class="m-10" />
+<section class="max-w-sm px-4 sm:px-6">
+	<Heading tag="h2" class="mb-4">Site Authors</Heading>
+	<List>
+		{#each data.data as author}
+			<Li
+				><a
+					href={author.attributes.link}
+					class={author.attributes.link ? 'underline hover:text-blue-500' : ''}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					{author.attributes.name}</a
+				>
+			</Li>
+		{/each}
+	</List>
 </section>
