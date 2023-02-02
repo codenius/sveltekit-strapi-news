@@ -37,14 +37,20 @@
 		<h1 class="self-start text-4xl md:text-6xl pb-5 font-black font-serif tracking-wide">
 			{data.data.attributes.title}
 		</h1>
-		<img
-			class="pb-5 max-h-[50vh] max-w-full object-scale-down"
-			height={data.data.attributes.image.data?.attributes.height}
-			width={data.data.attributes.image.data?.attributes.width}
-			loading="lazy"
-			src={data.data.attributes.image.data?.attributes.url}
-			alt=""
-		/>
+		<div class="pb-5">
+			<img
+				class="max-h-[50vh] max-w-full object-scale-down"
+				height={data.data.attributes.image.data?.attributes.height}
+				width={data.data.attributes.image.data?.attributes.width}
+				loading="lazy"
+				src={data.data.attributes.image.data?.attributes.url}
+				alt=""
+			/>
+			<small
+				class="text-gray-400 dark:text-gray-500 text-xs break-all"
+				>© {data.data.attributes.image.data?.attributes.caption ? data.data.attributes.image.data?.attributes.caption : `Hacker's Corner`}</small
+			>
+		</div>
 	</div>
 
 	<div class="max-w-2xl italic mb-4">{data.data.attributes.summary || ''}</div>
