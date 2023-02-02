@@ -56,7 +56,7 @@
 						href="/article/{slide.article_id}"
 					>
 						<img
-							class="object-cover h-64 sm:h-96 md:h-[35rem] bg-white md:max-h-[60vh] sm:object-scale-down w-full sm:w-auto"
+							class="object-cover h-64 sm:h-96 md:h-[35rem] bg-white md:max-h-[60vh] sm:object-contain w-full sm:w-auto"
 							src={slide.img_url}
 							alt={slide.name}
 						/>
